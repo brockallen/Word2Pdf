@@ -49,7 +49,7 @@ namespace Word2Pdf
         {
             Console.WriteLine("Found: {0}", file);
             File.SetAttributes(file, FileAttributes.Normal);
-            var idx = file.IndexOf(".");
+            var idx = file.LastIndexOf(".");
             var newPath = file.Remove(idx, file.Length - idx) + ".pdf";
             Doc2PDFAtServerClass.word2PdfFcih(file, newPath);
         }
