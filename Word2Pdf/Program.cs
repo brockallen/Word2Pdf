@@ -32,7 +32,10 @@ namespace Word2Pdf
             var files = Directory.GetFiles(path, "*.docx").Union(Directory.GetFiles(path, "*.doc"));
             foreach (var file in files)
             {
-                Process(file);
+                if (!Path.GetFileName(file).StartsWith("~"))
+                {
+                    Process(file);
+                }
             }
 
             var subs = Directory.GetDirectories(path);
