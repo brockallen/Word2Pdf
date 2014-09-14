@@ -12,7 +12,7 @@ namespace Word2Pdf
         {
             if (args.Length != 1)
             {
-                Console.WriteLine("Pass the direcotry as a param");
+                PrintUsage();
                 return;
             }
 
@@ -25,6 +25,11 @@ namespace Word2Pdf
             {
                 Console.WriteLine("{0} is not a directory");
             }
+        }
+        
+        private static void PrintUsage()
+        {
+            Console.WriteLine("Pass the directory as a param");
         }
 
         private static void Run(string path)
